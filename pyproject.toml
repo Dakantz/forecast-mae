@@ -1,0 +1,29 @@
+[project]
+name = "forecast-mae"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "ray",
+    "tqdm",
+    "hydra-core==1.2.0",
+    "pytorch-lightning==1.8.2",
+    "setuptools==59.5.0",
+    "protobuf==3.19.0",
+    "rich==12.4.4",
+    "wandb==0.13.5",
+    "plotly",
+    "matplotlib",
+    "timm",
+    "plotly",
+    "torchmetrics==0.10.2",
+    "ipython>=8.34.0",
+    "ipykernel>=6.29.5",
+    "av2>=0.3.4",
+    "numpy==1.26.4",
+    "torch==2.5.0",
+    # "natten>=0.17.5",
+]
+
+

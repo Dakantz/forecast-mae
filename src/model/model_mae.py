@@ -364,6 +364,7 @@ class ModelMAE(nn.Module):
         if not self.training:
             out["x_hat"] = x_hat.view(B, N, 50, 2)
             out["y_hat"] = y_hat.view(1, B, N, 60, 2)
+            out["x_decoder"] = x_decoder
             out["lane_hat"] = lane_pred.view(B, M, 20, 2)
             out["lane_keep_ids"] = lane_ids_keep_list
             out["hist_keep_ids"] = hist_keep_ids_list

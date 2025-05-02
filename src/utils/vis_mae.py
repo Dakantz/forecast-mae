@@ -34,9 +34,11 @@ _CATEGORY_TO_COLOR: Final[dict] = {
 _PlotBounds = Tuple[float, float, float, float]
 
 
-def plot_reconstruction(data, out, save_path="./test.pdf"):
+def plot_reconstruction(data, out, save_path="./test.pdf", fig=None):
     row, col = 3, 1
-    fig, ax = plt.subplots(3, 1, figsize=(27 / 3, 24 / 3))
+    if fig is None:
+        fig = plt.figure(figsize=(27 / 3, 24 / 3))
+    ax = fig.subplots(3, 1)
     fig.subplots_adjust(hspace=-0.08)
 
     fc = ["#EEEEEE", "#EEEEEE", "#EEEEEE"]

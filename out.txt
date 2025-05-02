@@ -1,0 +1,141 @@
+Using Python 3.9.18 environment at: /home/benedikt/miniconda3
+Resolved 24 packages in 5ms
+  × Failed to build `natten==0.17.5`
+  ├─▶ The build backend returned an error
+  ╰─▶ Call to `setuptools.build_meta:__legacy__.build_wheel` failed (exit status: 1)
+
+      [stdout]
+      Building NATTEN with CUDA 121
+      Building NATTEN for SM: 8.9
+      Number of workers: 6
+      running bdist_wheel
+      running build
+      running build_py
+      running build_ext
+      -- Configuring incomplete, errors occurred!
+      Current arch list: [89] (max: 89)
+
+      [stderr]
+      CMake Error at /usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:780 (message):
+        Compiling the CUDA compiler identification source file
+        "CMakeCUDACompilerId.cu" failed.
+
+        Compiler: /usr/bin/nvcc
+
+        Build flags:
+
+        Id flags: --keep;--keep-dir;tmp -v
+
+
+
+        The output was:
+
+        1
+
+        #$ _NVVM_BRANCH_=nvvm
+
+        #$ _SPACE_=
+
+        #$ _CUDART_=cudart
+
+        #$ _HERE_=/usr/bin
+
+        #$ _THERE_=/usr/bin
+
+        #$ _TARGET_SIZE_=
+
+        #$ _TARGET_DIR_=
+
+        #$ _TARGET_SIZE_=64
+
+        #$ rm tmp/a_dlink.reg.c
+
+        #$ gcc -D__CUDA_ARCH_LIST__=520 -D__NV_LEGACY_LAUNCH -E -x c++ -D__CUDACC__
+        -D__NVCC__ -D__CUDACC_VER_MAJOR__=12 -D__CUDACC_VER_MINOR__=6
+        -D__CUDACC_VER_BUILD__=85 -D__CUDA_API_VER_MAJOR__=12
+        -D__CUDA_API_VER_MINOR__=6 -D__NVCC_DIAG_PRAGMA_SUPPORT__=1 -include
+        "cuda_runtime.h" -m64 "CMakeCUDACompilerId.cu" -o
+        "tmp/CMakeCUDACompilerId.cpp4.ii"
+
+        In file included from /usr/include/cuda_runtime.h:83,
+
+                         from <command-line>:
+
+        /usr/include/crt/host_config.h:132:2: error: #error -- unsupported GNU
+        version! gcc versions later than 12 are not supported! The nvcc flag
+        '-allow-unsupported-compiler' can be used to override this version check;
+        however, using an unsupported host compiler may cause compilation failure
+        or incorrect run time execution.  Use at your own risk.
+
+          132 | #error -- unsupported GNU version! gcc versions later than 12 are not supported! The nvcc flag '-allow-unsupported-compiler' can be used to override this version check; however, using an unsupported
+      host compiler may cause compilation failure or incorrect run time execution. Use at your own risk.
+              |  ^~~~~
+
+        # --error 0x1 --
+
+
+
+
+
+      Call Stack (most recent call first):
+        /usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)
+        /usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:53 (__determine_compiler_id_test)
+        /usr/share/cmake-3.28/Modules/CMakeDetermineCUDACompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID)
+        CMakeLists.txt:5 (project)
+
+      
+      Traceback (most recent call last):
+        File "<string>", line 11, in <module>
+        File "/home/benedikt/miniconda3/lib/python3.9/site-packages/setuptools/build_meta.py", line 416, in build_wheel
+          return self._build_with_temp_dir(['bdist_wheel'], '.whl',
+        File "/home/benedikt/miniconda3/lib/python3.9/site-packages/setuptools/build_meta.py", line 401, in _build_with_temp_dir
+          self.run_setup()
+        File "/home/benedikt/miniconda3/lib/python3.9/site-packages/setuptools/build_meta.py", line 487, in run_setup
+          super(_BuildMetaLegacyBackend,
+        File "/home/benedikt/miniconda3/lib/python3.9/site-packages/setuptools/build_meta.py", line 338, in run_setup
+          exec(code, locals())
+        File "<string>", line 243, in <module>
+        File "/home/benedikt/miniconda3/lib/python3.9/site-packages/setuptools/__init__.py", line 107, in setup
+          return distutils.core.setup(**attrs)
+        File "/home/benedikt/miniconda3/lib/python3.9/site-packages/setuptools/_distutils/core.py", line 185, in setup
+          return run_commands(dist)
+        File "/home/benedikt/miniconda3/lib/python3.9/site-packages/setuptools/_distutils/core.py", line 201, in run_commands
+          dist.run_commands()
+        File "/home/benedikt/miniconda3/lib/python3.9/site-packages/setuptools/_distutils/dist.py", line 969, in run_commands
+          self.run_command(cmd)
+        File "/home/benedikt/miniconda3/lib/python3.9/site-packages/setuptools/dist.py", line 1234, in run_command
+          super().run_command(command)
+        File "/home/benedikt/miniconda3/lib/python3.9/site-packages/setuptools/_distutils/dist.py", line 988, in run_command
+          cmd_obj.run()
+        File "/home/benedikt/miniconda3/lib/python3.9/site-packages/wheel/bdist_wheel.py", line 364, in run
+          self.run_command("build")
+        File "/home/benedikt/miniconda3/lib/python3.9/site-packages/setuptools/_distutils/cmd.py", line 318, in run_command
+          self.distribution.run_command(command)
+        File "/home/benedikt/miniconda3/lib/python3.9/site-packages/setuptools/dist.py", line 1234, in run_command
+          super().run_command(command)
+        File "/home/benedikt/miniconda3/lib/python3.9/site-packages/setuptools/_distutils/dist.py", line 988, in run_command
+          cmd_obj.run()
+        File "/home/benedikt/miniconda3/lib/python3.9/site-packages/setuptools/_distutils/command/build.py", line 131, in run
+          self.run_command(cmd_name)
+        File "/home/benedikt/miniconda3/lib/python3.9/site-packages/setuptools/_distutils/cmd.py", line 318, in run_command
+          self.distribution.run_command(command)
+        File "/home/benedikt/miniconda3/lib/python3.9/site-packages/setuptools/dist.py", line 1234, in run_command
+          super().run_command(command)
+        File "/home/benedikt/miniconda3/lib/python3.9/site-packages/setuptools/_distutils/dist.py", line 988, in run_command
+          cmd_obj.run()
+        File "/home/benedikt/miniconda3/lib/python3.9/site-packages/setuptools/command/build_ext.py", line 84, in run
+          _build_ext.run(self)
+        File "/home/benedikt/miniconda3/lib/python3.9/site-packages/setuptools/_distutils/command/build_ext.py", line 345, in run
+          self.build_extensions()
+        File "/home/benedikt/miniconda3/lib/python3.9/site-packages/setuptools/_distutils/command/build_ext.py", line 467, in build_extensions
+          self._build_extensions_serial()
+        File "/home/benedikt/miniconda3/lib/python3.9/site-packages/setuptools/_distutils/command/build_ext.py", line 493, in _build_extensions_serial
+          self.build_extension(ext)
+        File "<string>", line 219, in build_extension
+        File "/home/benedikt/miniconda3/lib/python3.9/subprocess.py", line 373, in check_call
+          raise CalledProcessError(retcode, cmd)
+      subprocess.CalledProcessError: Command '['cmake', '/home/benedikt/.cache/uv/sdists-v6/pypi/natten/0.17.5/u87lUY4rmiyTVBJWTdCGE/src/csrc', '-DPYTHON_PATH=/home/benedikt/miniconda3/bin/python3',
+      '-DOUTPUT_FILE_NAME=natten/libnatten.cpython-39-x86_64-linux-gnu', '-DNATTEN_CUDA_ARCH_LIST=89-real', '-DNATTEN_IS_WINDOWS=0', '-DNATTEN_IS_MAC=0', '-DIS_LIBTORCH_BUILT_WITH_CXX11_ABI=0', '-DNATTEN_WITH_AVX=1',
+      '-DNATTEN_WITH_CUDA=1', '-DNATTEN_WITH_CUTLASS=1']' returned non-zero exit status 1.
+
+      hint: This usually indicates a problem with the package or the build environment.
